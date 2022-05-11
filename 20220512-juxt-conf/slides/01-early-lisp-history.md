@@ -1,10 +1,10 @@
 #  => Early Lisp 1955-1960
 
-<img src="media/timeline-1.png">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/timeline-1.png" width="600">
 
 # Once upon a time, in 1950
 
-<img src="media/john-mccarthy.png" width="200">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/john-mccarthy.png" width="200">
 
 * John McCarthy (1927-2011)
 * Ph.D. mathematics from Princeton 1951
@@ -21,7 +21,7 @@
 
 # "Artificial Intelligence" study proposal
 
-<img src="media/dartmouth-proposal.png" width="800">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/dartmouth-proposal.png" width="800">
 
 # Goals
 
@@ -54,7 +54,7 @@
 
 # Reality check: IBM 704
 
-<img src="media/ibm-704.gif" width="800">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/ibm-704.gif" width="800">
 
 # `car`, `cdr` and friends
 
@@ -72,7 +72,7 @@
 
 # Early attempts
 
-<img src="media/diff-no-lambda.png" width="600">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/diff-no-lambda.png" width="600">
 
 * APL-ish single liner
 * Algol like, not homoiconic
@@ -80,7 +80,7 @@
 
 # Lambda to the rescue
 
-<img src="media/diff-lambda.png" width="600">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/diff-lambda.png" width="600">
 
 * Inspiration coming from Church's [Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus)
 * **λ** now allow `maplist` to declare the meaning of "J"
@@ -101,13 +101,15 @@
 * *Steve:* "Why don't we write this apply-eval down to assembly?"
 * *McCarthy:* "ho, ho, you're confusing theory with practice... this `eval` is intended for reading not for computing."
 
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/steve-russel.jpg">
+
 # Eval-Apply
 
-<img src="media/sicp.jpg" width="600">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/sicp.jpg" width="600">
 
 # Lisp 1 was born
 
-<img src="media/lisp-1-manual.png" width="500">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/lisp-1-manual.png" width="500">
 
 # Lesson Learned
 

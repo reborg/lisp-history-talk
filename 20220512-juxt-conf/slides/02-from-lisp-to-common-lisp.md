@@ -1,6 +1,6 @@
 # => From Lisp to Common Lisp 1960-1990
 
-<img src="media/timeline-1.png">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/timeline-1.png" width="600">
 
 # After Lisp 1
 
@@ -28,7 +28,7 @@
 
 # Xerox Alto
 
-<img src="media/alto.png" width="400">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/alto.png" width="400">
 
 # Lisp Machines
 
@@ -40,7 +40,7 @@
 
 # Symbolics
 
-<img src="media/symbolics.png" width="600">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/symbolics.png" width="600">
 
 # Lisp Machines Innovations
 
@@ -76,7 +76,7 @@
 * A well delivered compromise, overall
 
 #
-<img src="media/common-lisp.png" width="600">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/common-lisp.png" width="600">
 
 # The golden era 1984-1988
 
@@ -84,14 +84,6 @@
 * The allure of AI attracted business and VCs
 * Lisp was granted unprecedented popularity
 * Lisp companies thrived thanks to quality and performance
-
-# The AI Winter, 1990+
-
-* In typical bubble style, AI was over hyped
-* Lisp machines power gradually eroded by Moore's law
-* Large failures like the [Fifth Generation System](https://en.wikipedia.org/wiki/Fifth_Generation_Computer_Systems#Failure)
-* Darpa re-routing of funds in the previous years
-* Blaming Expert Systems was counter-productive
 
 # Lesson Learned
 

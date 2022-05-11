@@ -1,18 +1,52 @@
-# => From Common Lisp to Clojure 1990 - 2007
+# => From CL to Clojure 1990 - 2007
 
-<img src="media/timeline-2.png">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/timeline-2.png" width="600">
+
+# Honorable mentions for this period
+
+* Racket (1995)
+* Arc and Bel (Paul Graham)
+* LFE
+* And of course, Clojure
+* But in general, a decrease in popularity for Lisp
+
+# The AI Winter, 1990+
+
+* In typical bubble style, AI was over hyped
+* Lisp machines power gradually eroded by Moore's law
+* Large failures like the [Fifth Generation System](https://en.wikipedia.org/wiki/Fifth_Generation_Computer_Systems#Failure)
+* Self-Blaming Expert Systems as non-AI
+
+# Times are changing
+
+* Advent of the web: shift from personal to distributed
+* Object Oriented Programming
+* C++ (1985) Python (1991) Java (1995) JavaScript (1996)
+* Software industry exponential growth
 
 # What makes a language popular?
 
-# About expressiveness
+* free, efficient, expressive
+* well documented, hackable
+* scripting language for a popular OS or browser
+* language distributed by large vendor
+* Has a "killer app"
+* Batteries included (json, web, etc.)
+* Backward compatible and stable
+* Marketing and money
 
-*People expect that operations in the language cost a small unit time. But this expectation is false for a sufficiently expressive language. <br/> <br/>When the primitives are at a sufficiently high level, there is enough wiggle room underneath to permit a choice of implementation strategies. Precisely because Lisp is so expressive, it can be very hard to write fast programs (though it is easy to write pretty ones)* <br/><br/>(Steele and Gabriel, Evolution of Lisp, 1983)
+# The build up to Clojure, 2003-2006
 
-# Factors
+* Rich worked on a couple of large CL applications (2001)
+* DotLisp (interpreted Lisp for the CLR), 2003
+* jFli (embedded JVM in CL), 2004
+* Foil (JVM to CL via IPC), 2005
+* March 2006, Clojure started as a [Lisp compiler](https://sourceforge.net/p/clojure/code/61/tree/trunk/src/lisp/clojure.lisp#l11)
 
-* After the AI Winter, some Lisp companies survived, many others went out of business
-* Other languages were on the rise taking mainly an OOP approach: Java (1995), C++ (1985)
-* A few relevant Lisps continued to thrive in the research community
-* Web oriented applications shifted the focus of programming in different directions than personal workstation
-  * Lisp was mainframe oriented first, personal workstation later
-  * Not sure it failed to adapt to the Internet, or it was slow compared to other languages, Perl CGI for instance, ROR later.
+# Clojure Rationale
+
+* OOP makes things very complicated to reason about
+* The JVM and the CLR are widely distributed
+* Moore's law plateau and multi-core CPUs
+* In search for a new Lisp experience
+* Immutability to tame concurrency
