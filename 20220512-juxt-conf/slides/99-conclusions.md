@@ -4,11 +4,6 @@
 * 2020, Clojure accepted at HOPL IV
 * 2022, Milton Keynes 15th anniversary and counting!
 
-<video controls>
- <source src="https://www.dropbox.com/s/kvp9qpgnzosxubb/rich-conj-10th-anniversary.mp4?dl=1" type="video/mp4">
- Your browser does not support the video tag.
-</video>
-
 # Is Clojure popular?
 
 * [x] Internal merits: free, efficient, expressive
@@ -16,6 +11,7 @@
 * [ ] scripting language for a popular OS or browser
 * [ ] language distributed by large vendor
 * [ ] Has a "killer app"
+* [ ] Pivotal to fundamental innovation
 * [ ] Batteries included (json, web, etc.)
 * [x] Backward compatible and stable
 * [ ] Marketing and money
@@ -26,4 +22,13 @@
 
 <small>Paul Graham, Hackers and Painters, 2010</small>
 
-# ~ fin ~
+# Is there hope?
+
+* Of course!
+* Let's work together to improve
+* Tell your friends how cool Clojure is
+* Talk at conferences and meetups
+* Write blogs, libraries, books
+* Never stop learning!
+
+~ fin ~

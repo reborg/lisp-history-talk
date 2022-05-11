@@ -2,14 +2,6 @@
 
 <img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/timeline-2.png" width="600">
 
-# Honorable mentions for this period
-
-* Racket (1995)
-* Arc and Bel (Paul Graham)
-* LFE
-* And of course, Clojure
-* But in general, a decrease in popularity for Lisp
-
 # The AI Winter, 1990+
 
 * In typical bubble style, AI was over hyped
@@ -23,6 +15,7 @@
 * Object Oriented Programming
 * C++ (1985) Python (1991) Java (1995) JavaScript (1996)
 * Software industry exponential growth
+* But in general, a decrease in popularity for Lisp
 
 # What makes a language popular?
 
@@ -31,6 +24,7 @@
 * scripting language for a popular OS or browser
 * language distributed by large vendor
 * Has a "killer app"
+* Pivotal to fundamental innovation
 * Batteries included (json, web, etc.)
 * Backward compatible and stable
 * Marketing and money

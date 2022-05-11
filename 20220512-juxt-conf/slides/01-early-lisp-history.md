@@ -41,7 +41,7 @@
 * F-LPL: Fortan-compiled for list processing
 * Algol: McCarthy tried to influence unsuccessfully
 
-## Too restrictive, in one way or another
+<small>Too restrictive, in one way or another</small>
 
 # The perfect storm
 
@@ -86,7 +86,7 @@
 * **λ** now allow `maplist` to declare the meaning of "J"
 * No mutation, `maplist` gets fresh elements from storage
 
-## Still not very lispy!
+Still not very lispy!
 
 # Turning point: s-expressions
 
@@ -96,14 +96,14 @@
 * Extend `apply` to receive Lisp forms as lists
 * `eval` would need to interpret 6-7 special forms
 
-# And then Steve Russel came around
+# And then Steve Russell came around
 
 * *Steve:* "Why don't we write this apply-eval down to assembly?"
 * *McCarthy:* "ho, ho, you're confusing theory with practice... this `eval` is intended for reading not for computing."
 
-<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/steve-russel.jpg">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/steve-russell.jpg">
 
-# Eval-Apply
+# `eval` <=> `apply`
 
 <img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/sicp.jpg" width="600">
 

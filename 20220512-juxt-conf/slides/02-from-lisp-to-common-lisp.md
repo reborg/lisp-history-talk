@@ -38,7 +38,7 @@
 * Large bitmapped display inspired by the Alto
 * Many industrial grade changes to Lisp
 
-# Symbolics
+# Symbolics 3360
 
 <img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220512-juxt-conf/media/symbolics.png" width="600">
 
@@ -65,7 +65,7 @@
 * Still a "kludge" allowing many styles
 * Many dialects and diverging philosophies
 * Multiple Lisp machines from different vendors
-* A definite need for standardization
+* A desperate need for standardization
 
 # Common Lisp
 
@@ -81,6 +81,7 @@
 # The golden era 1984-1988
 
 * AI was on the rise, Lisp was the language of AI
+* Expert systems was the "killer app"
 * The allure of AI attracted business and VCs
 * Lisp was granted unprecedented popularity
 * Lisp companies thrived thanks to quality and performance
@@ -88,7 +89,7 @@
 # Lesson Learned
 
 * Importance of theoretical foundations
-* Expressiveness liberating from low level details
-* Flexibility in extensions which are similar to the core
+* Expressiveness freedom from low level details
+* Flexible extensions similar to the core language
 * Interactive and incremental nature
-
+* Pivotal to fundamental innovation
