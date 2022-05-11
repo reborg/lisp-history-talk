@@ -1,0 +1,266 @@
+ONCE UPON A MIT
+IN 1950 JOHN MCCARTHY,  MATHEMATICIAN, WAS  RESEARCHING WAYS TO TEACH  COMPUTERS HOW TO LEARN
+
+THE ORIGINAL IDEA
+HE HAD NO IDEA HE WOULD INVENT A MILESTONE LANGUAGE
+▸ Gradual discovery process
+▸ From imperative to functional  in baby steps
+▸ A specific problem to solve
+▸ Debunking the myth of a  "pure" Lisp
+John McCarthy (ca 1931)
+
+THE ORIGINAL IDEA
+WHAT DOES IT MEAN TO TEACH MACHINES
+▸ Instruct "reasoning devices"
+▸ Logic inference from  declarative sentences
+▸ Programming with short  statements
+▸ Relationship between  intelligence and language
+Dartmouth Proposal 1955
+
+The programming Problem, manuscript, ~1955
+A PROGRAMMING LANGUAGE HAS TO BE:
+THE ORIGINAL IDEA
+▸ Unambiguous
+▸ Able to describe any  computation (also recursive)
+▸ Not much larger than the  sentence it describes
+▸ Abstracted away from hardware  constraints
+▸ Is there already such a language?
+
+LOOKING AROUND: IPL
+INSPIRATION
+▸ Development started in 1959
+▸ List based assembly language
+▸ Instructions on lists
+▸ Extremely low level
+“distinct” in IPL. J90, J60 etc, are operators From the standard library.
+
+Fortran coding system for the IBM 704, 1956
+SOURCE OF INSPIRATION #2: FORTRAN
+INSPIRATION
+▸ Symbolic (allowing “a + a”  after defining “a”)
+▸ Algebraic expressions
+▸ Arithmetic IF (expression)  negative, zero, positive
+▸ Composing sub-routines
+
+SOURCE OF INSPIRATION #3: F-LPL
+TOWARD A NEW LANGUAGE
+▸ Fortran List Processing Language
+▸ Replicate IPL concepts
+▸ Extend Fortran with lists
+▸ Work based on the IBM 704
+▸ But everything had to be an  integer (i.e. no symbolic domain)
+FLPL paper, 1959
+
+TOWARD A NEW LANGUAGE
+INDEX =	LPTS. Initialize index pointer.
+10	IF(CWWF(XCAR2F(INDEX))	-	2.0)	15,	15,	20.
+Go to statement 20
+if	x-component is greater than
+2.0;	otherwise	go to 15.
+15
+INDEX =	XCDRF(INDEX).
+20
+NAMEPT =	XCARF(INDEX).
+GO TO (EXIT	TO ROUTINE FOR PROCESSING
+NAMEPT).
+25
+(EXIT	WHEN LPTS CONTAINS NO POINT WITH X-COMP >	2.0).
+"Given a triangle in list  notation, find a point  with x-component  greater than two."
+F-LPL EXAMPLE
+
+FLPL MIGHT NOT THE BEST IDEA
+▸ Difficult to see lists in Fortran
+▸ Value of a function depending on  register state
+▸ Arithmetic IF with pass by  reference: both branches need  evaluation
+▸ Unable to extend standard  functions
+TOWARD A NEW LANGUAGE (1958)
+
+GRADUALLY CONVERGING TO A SET OF REQUIREMENTS
+TOWARD A NEW LANGUAGE (1958)
+
+ALGOL IS THE ANSWER!
+▸ Proposal for: conditional statement
+▸ Proposal for: prefix notation
+▸ Proposal for: var assignment of functions
+▸ Proposal for: Church lambda notation
+▸ The compiler should translate “text”  according to “rules”
+▸ All rejected!
+▸ Go home McCarthy!
+TOWARD A NEW LANGUAGE (1958)
+Algol Committee reunion (1974)
+JOHN  MCCARTHY
+JOE WEGSTEIN
+JOHN BACKUS
+PETER NAUR	ALAN PERLIS
+Quiz time:
+FRIEDRICH L.  BAUER
+
+BUT RIGHT WHEN  ALL HOPE SEEMS  LOST…
+
+IS THERE STILL HOPE?
+THE PERFECT STORM
+▸ September 1958
+▸ New MIT AI Lab
+▸ 1 Basement room
+▸ 2 programmers, 6 students
+▸ 1 secretary, 1 typewriter
+▸ Some limited CPU time
+The basement at MIT in 1958 (not really :)
+
+THE CONTEXT
+THE AVAILABLE  HARDWARE
+PDP-1
+IBM 704
+
+SO BE LISP
+IBM 704 36-BITS WORD STRUCTURE
+Part
+Name
+Bits
+Fn
+w
+whole word
+0-35
+cwr
+p
+prefix
+0-1-2
+cpr
+i
+indicator
+1-2
+cir
+s
+sign bit
+0
+csr
+d
+decrement
+3-17
+cdr
+t
+tag
+18-20
+ctr
+a
+address
+21-35
+car
+C (content of the) <name> R (egistry)
+
+HOW TO MODEL LISTS ON 36 BITS WORDS?
+SO BE LISP
+▸ Here’s why we are still talking about “cons” (cells)
+▸ consel (e,ø) puts "e" in the address and "ø" in the decrement part of a  word from "free storage"
+▸ consf1(w,d) takes 2 words from free storage. Puts "w" in one, puts the  address of that in the address field of the other.
+▸ erase (x) returns the word at location "x" back to free storage.
+
+VERY FIRST CUT
+SO BE LISP
+subroutine
+eralis (J)
+/	J	=	ø	->	return  go
+(a	(cir(J))  jnk
+a(1)
+a(0)
+eralis
+=	erase (car	(J))  (dec	(erase(J)))
+return
+a(2)	eralis (car	(J))
+\ go (a(o))
+▸ Not exactly the Lisp you’d imagine...
+▸ Strong Fortran influence
+▸ Yet recursive
+▸ “Goto” based conditionals
+▸ Note: non-homoiconic “m-  expressions”.
+▸ The List is just an implementation  detail
+"eralis" (erase-list) walk a list to return items to free storage
+
+LESS FORTRAN-Y: COPY
+SO BE LISP
+function	copy	(J)
+/copy	=	(J	=	0
+copy	(cdr	(J)),
+->	0,	J	=	1
+ctr	(J),	(cir
+(J),
+->	consw	(comb	4	(cpr	(J),
+cir
+(J)	=	1
+(J)	=	0	->	car
+(J))),	cir	(J)	=	2	->	copy	(car	(J))))))
+->	consw	(cwr	(car
+\return
+The copy function from the AI Memo #1
+
+DIFF AND THE FIRST “MAP”
+SO BE LISP
+▸ maplist (cdr(J),K,diff(K))) is equivalent to (map diff L)
+▸ But "K" is a dummy variable to range over the addresses
+▸ maplist mutates cdr(J) in place.
+
+MAPLIST: LAMBDA TO THE RESCUE
+SO BE LISP
+▸ The λ now allow maplist to declare the meaning of “J"
+▸ Hide mutation
+▸ maplist returns a new list from free storage
+diff version as appearing on the AI Memo #4
+
+SUBSTITUTIONAL FUNCTIONS
+▸ Common problem: invoke f on a list of args
+▸ subfun is sublist of f with the rest of the list (f, p1, p2, .. pN)
+▸ Then replace car(f) with the result of subfun
+▸ (subfun(x) (f x)) is indeed (lambda(x) (f x))
+Appeared first time on the AI Memo #4
+SO BE LISP
+
+END OF 1958 PROJECT STATUS
+▸ Several functions hand-written in  assembly for the IBM 704
+▸ A compiler envisioned to automate  some of the manual process
+▸ Envisioned an "external standard  notation" to feed apply with lists
+SO BE LISP
+cons in assembly IBM 704 (called SAP)
+
+TURNING POINT (BEGINNING OF 1959)
+TURNING POINT
+▸ Challenged to describe a Turing  machine in Lisp
+▸ He had to feed another “Lisp  Turing machine” into it
+▸ Extended apply to receive Lisp  functions as Lists
+
+THE EXTERNAL NOTATION (AKA LISP)
+▸ An alternative syntax without arrows,  square brackets, etc. called s-  expressions.
+▸ Round parenthesis () because the  card puncher only had those!
+▸ Prefix notation, giving a special  meaning to the first item (function  call)
+SO BE LISP
+Card punch recorder
+
+EVAL
+FINAL TOUCH
+▸ A generic apply needs to  understand Lisp: symbols, lambdas,  lists or other apply.
+▸ The eval part in apply is the  condition to select the correct way  to interpret a form.
+▸ apply is called recursively to invoke  a function on its arguments.
+▸ Apply/Eval/Apply/Eval…
+
+AND THEN STEVE RUSSEL CAME AROUND…
+▸ Steve: “Why don’t we write this  apply-eval down to assembly?”
+▸ McCarthy: ”ho, ho, you're  confusing theory with  practice...this EVAL is intended  for reading not for computing."
+▸ Russel compiled the eval part  down to 704 assembly
+▸ And the first REPL was born!
+THE FAMOUS EXCHANGE
+The first recorded APPLY-EVAL version
+
+AN INSPIRING LESSON
+▸ Well defined goals
+▸ Baby steps, small increments,  refined versions
+▸ If the alternative doesn't work,  make your own
+▸ Constrained resources = more  time to think
+▸ Team interplay
+▸ Ultimately, no fear!
+John McCarthy 1927-2011
+'56-'59: FOUR INTENSE YEARS
+
+ 	SPECIAL      MENTION
+by Prof. i. R. Dr. Herbert Stoyan
+
+~ FIN ~
+@reborg
