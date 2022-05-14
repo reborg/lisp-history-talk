@@ -6,8 +6,8 @@
 
 # Is Clojure popular?
 
-* [x] Internal merits: free, efficient, expressive
-* [ ] well documented, hackable
+* [x] free, efficient, expressive
+* [?] documented, beginner friendly, hackable
 * [ ] scripting language for a popular OS or browser
 * [ ] language distributed by large vendor
 * [ ] Has a "killer app"
@@ -25,10 +25,18 @@
 # Is there hope?
 
 * Of course!
-* Let's work together to improve
-* Tell your friends how cool Clojure is
+* Human beings are short lived
+* Knowledge persists through books, media, etc.
+* But humans forget, distort, make mistakes
+* As a consequence, history repeats
+* Learn the past to shape the future
+
+# What can I do?
+
+* Tell the Lisp tale to your friends
 * Talk at conferences and meetups
 * Write blogs, libraries, books
+* Let's "program" the next fundamental change in society
 * Never stop learning!
 
 ~ fin ~

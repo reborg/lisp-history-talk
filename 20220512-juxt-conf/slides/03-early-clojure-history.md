@@ -20,7 +20,7 @@
 # What makes a language popular?
 
 * free, efficient, expressive
-* well documented, hackable
+* documented, beginner friendly, hackable
 * scripting language for a popular OS or browser
 * language distributed by large vendor
 * Has a "killer app"
