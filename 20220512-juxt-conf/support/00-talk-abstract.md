@@ -1,6 +1,8 @@
-# Abstract
+# A Tale of Lisp
 
-What happened in the basements of the AI lab at MIT in the late '50 is a truly inspiring story. Lisp is one of the oldest languages. Surprisingly, many concepts that we give for granted in functional programming today were there almost 60 years ago! When I started learning about functional programming with Clojure, I naturally got interested in Lisp as well, its relationship with AI and what lambda calculus has to do with it. Despite the long history of innovation in computer science, you might heard that "Lisp has failed". How can it be?
+## Abstract
+
+Lisp is one of the oldest languages and it has a long and fascinating story. It went from being popular and well funded to a period of relative abandonment. In more modern times we've seen a resurgence of functional languages, including the return of Lisp to the mainstream with Clojure. Surely this must be the time that functional takes over? In this talk we are going to learn from the past remembering the fascinating history of Lisp, drawing conclusions about the present and ultimately ask ourselves what makes a language popular.
 
 ## Initial Thoughts
 
