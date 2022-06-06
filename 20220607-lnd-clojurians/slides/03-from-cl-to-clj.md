@@ -19,7 +19,7 @@
 * Negative impact of large failures like the [Fifth Generation System](https://en.wikipedia.org/wiki/Fifth_Generation_Computer_Systems#Failure)
 * Counterproductive self-blaming of Expert Systems as non-AI
 
-<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/fifth-gen.jpg" width="300">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/fifth-gen.jpg" width="400">
 
 # Lisp: some other cited problems
 
@@ -38,6 +38,8 @@
 * [Clozure CL](https://github.com/Clozure/ccl) (CL)
 * [Racket](https://racket-lang.org/) (not CL)
 * [Emacs Lisp](https://www.gnu.org/software/emacs/manual/html_node/elisp/) (Not CL)
+* [Shen](https://shenlanguage.org/) (Not CL)
+* …
 
 # Clojure, the build up 2001-2006
 
@@ -66,20 +68,22 @@
 * Is [multi-core parallelism](https://stackoverflow.com/questions/2835801/why-hasnt-functional-programming-taken-over-yet) essential?
 * Was programming liberated from the [Von Neumann style](https://dl.acm.org/doi/pdf/10.1145/359576.359579)?
 * Has overall complexity of software changed?
+* "Just" FP might not be enough to get [out the tar pit](http://curtclifton.net/papers/MoseleyMarks06a.pdf)
 
-> The complexity of software is in essential property, not an accidental one. Fred Brooks, [No Silver Bullet](https://web.archive.org/web/20160910002130/http://worrydream.com/refs/Brooks-NoSilverBullet.pdf)
+> The complexity of software is an essential property, not an accidental one. Fred Brooks, [No Silver Bullet](https://web.archive.org/web/20160910002130/http://worrydream.com/refs/Brooks-NoSilverBullet.pdf)
 
-# Then what makes a language popular?
+# What makes a language popular?
 
-* Free, efficient, expressive, well designed
-* Documented and beginner friendly
-* Presence of a charismatic leader
-* Scripting language for a popular OS or browser
-* Distributed by a large vendor (marketing and money)
-* Has a "killer app"
-* Batteries included (Json, Web, etc.)
-* Backward compatible and stable
-* Pivotal to fundamental innovation
+* [ ] Free, efficient, expressive, well designed
+* [ ] Documented and beginner friendly
+* [ ] Presence of a charismatic leader
+* [ ] Scripting language for a popular OS or browser
+* [ ] Distributed by a large vendor (marketing and money)
+* [ ] Has a "killer app"
+* [ ] Batteries included (Json, Web, etc.)
+* [ ] Backward compatible and stable
+* [ ] Easily contributed, hackable
+* [ ] Pivotal to fundamental innovation
 
 # Is Clojure popular?
 
@@ -91,19 +95,28 @@
 * [ ] Has a "killer app"
 * [ ] Batteries included (Json, Web, etc.)
 * [x] Backward compatible and stable
+* [ ] Easily contributed, hackable
 * [ ] Pivotal to fundamental innovation
 
 # Does it need to be popular?
 
+> I needed another choice more like Common Lisp or I wouldn’t be able to continue as a professional software developer.
+
+<small>Rich Hickey, [A history of Clojure](https://download.clojure.org/papers/clojure-hopl-iv-final.pdf), 2020</small>
+
 > Popularity further separates good languages from bad ones, because feedback from real live users always leads to improvements. So whether or not a language has to be good to be popular, I think a language has to be popular to be good. And it has to stay popular to stay good.
 
-<small>Paul Graham, Hackers and Painters, 2010</small>
+<small>Paul Graham, [Hackers and Painters](https://www.amazon.co.uk/Hackers-Painters-Big-Ideas-Computer/dp/1449389554), 2010</small>
 
 # Can it be popular?
 
 * Popularity doesn't need to happen fast and can trigger anytime
 * Lisp [it's rooted in math](http://www.paulgraham.com/icad.html): are we teaching it wrong?
 
-> many young people perception of mathematics is as being “boring and irrelevant” ([maths inquiry report](https://dera.ioe.ac.uk/4873/1/MathsInquiryFinalReport.pdf), 2004)
+> Many young people perception of mathematics is as being “boring and irrelevant”
 
-> “the popularity of mathematics diminishes during the time students are exposed to mathematics at school” ([The popularization of mathematics](https://www.worldcat.org/title/popularization-of-mathematics/oclc/23020125) 1990)
+<small>[maths inquiry report](https://dera.ioe.ac.uk/4873/1/MathsInquiryFinalReport.pdf), 2004</small>
+
+> “The popularity of mathematics diminishes during the time students are exposed to mathematics at school”
+
+<small>[The popularization of mathematics](https://www.worldcat.org/title/popularization-of-mathematics/oclc/23020125) 1990</small>
