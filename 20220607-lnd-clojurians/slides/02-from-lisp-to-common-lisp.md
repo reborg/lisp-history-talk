@@ -73,8 +73,7 @@
 * Priority given to Symbolics (largest money maker)
 * Little or no interest in European Lisp strands
 
-#
-<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/common-lisp.png" width="600">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/common-lisp.png" width="200">
 
 # The golden era 1984-1988
 
@@ -83,6 +82,8 @@
 * The allure of AI attracted business and VCs
 * Lisp was granted unprecedented popularity
 * Lisp companies thrived thanks to quality and performance
+
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/texas-instruments.png" width="300">
 
 # Lesson Learned
 
