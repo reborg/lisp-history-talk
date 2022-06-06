@@ -26,9 +26,7 @@
 * Ended up at Xerox, inspiring Smalltalk
 * Microcoded for the Alto by Deutch
 
-# Xerox Alto
-
-<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/alto.png" width="400">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/alto.png" width="200">
 
 # Lisp Machines
 
@@ -38,9 +36,7 @@
 * Large bitmapped display inspired by the Alto
 * Introduced many industrial grade changes to Lisp
 
-# Symbolics 3360
-
-<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/symbolics.png" width="600">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/symbolics.png" width="400">
 
 # Lisp Machines Innovations
 
@@ -50,6 +46,8 @@
   * `defstruct` record definition facility
   * `format`
   * Flavours OO
+
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/symbolics-examiner.png" width="400">
 
 # Scheme
 

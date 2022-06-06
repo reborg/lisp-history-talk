@@ -103,11 +103,11 @@ Still not very lispy!
 
 # `apply` <=> `eval`
 
-<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/sicp.jpg" width="600">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/sicp.jpg" width="400">
 
 # Lisp 1 was born
 
-<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/lisp-1-manual.png" width="500">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/lisp-1-manual.png" width="400">
 
 # Lesson Learned
 
