@@ -83,12 +83,12 @@
 * Lisp was granted unprecedented popularity
 * Lisp companies thrived thanks to quality and performance
 
-<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/texas-instruments.png" width="300">
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/texas-instruments.png" width="250">
 
 # Lesson Learned
 
-* Importance of theoretical foundations
-* Expressiveness power, the freedom from low level details
-* Flexible DSLs, similar to the core language
+* Importance of theoretical foundations, Lisp is rooted in math
+* Expressiveness power, the freedom from lower level details
+* Easy DSLs, similar to the core language
 * Interactive and incremental nature
 * Pivotal to fundamental innovation

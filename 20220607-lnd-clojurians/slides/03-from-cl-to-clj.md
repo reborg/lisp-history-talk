@@ -5,10 +5,12 @@
 # Times are changing
 
 * Advent of the web: shift from personal to distributed
-* Industrial scale principles applied to democratisation of software
-* RAD IDE (like [Delphi](https://en.wikipedia.org/wiki/Delphi_(software))) were heavy on OO
+* OO Window toolkits for developing desktop application
+* RAD IDE (like [Delphi](https://en.wikipedia.org/wiki/Delphi_(software)))
 * Unix (with C) installed on 90% of servers
 * Scripting languages: Python (1991), Java (applets) (1995), JavaScript (1996)
+
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/delphi-win95.png" width="400">
 
 # The (last) AI Winter, 1990+
 
