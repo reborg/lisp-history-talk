@@ -71,7 +71,7 @@
 <img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/diff-no-lambda.png" width="600">
 
 * APL-ish single liner
-* Algol like, not homoiconic
+* Algol like-ish
 * "K": a dummy var to iterate memory addresses
 
 # Lambda to the rescue
@@ -91,6 +91,8 @@ Still not very lispy!
 * Alternative syntax required for easier "punching"
 * Extend `apply` to receive Lisp forms as lists
 * `eval` would need to interpret 6-7 special forms
+
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/ibm-keypunch.jpg" width="400">
 
 # …And then Steve Russell came around
 
