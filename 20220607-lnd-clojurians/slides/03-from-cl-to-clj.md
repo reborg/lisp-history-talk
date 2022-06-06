@@ -5,8 +5,7 @@
 # Times are changing
 
 * Advent of the web: shift from personal to distributed
-* OO Window toolkits for developing desktop application
-* RAD IDE (like [Delphi](https://en.wikipedia.org/wiki/Delphi_(software)))
+* OO-based RAD IDE toolkits (like [Delphi](https://en.wikipedia.org/wiki/Delphi_(software)))
 * Unix (with C) installed on 90% of servers
 * Scripting languages: Python (1991), Java (applets) (1995), JavaScript (1996)
 
@@ -19,6 +18,8 @@
 * Lisp machines power gradually eroded by Moore's law
 * Negative impact of large failures like the [Fifth Generation System](https://en.wikipedia.org/wiki/Fifth_Generation_Computer_Systems#Failure)
 * Counterproductive self-blaming of Expert Systems as non-AI
+
+<img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/fifth-gen.jpg" width="300">
 
 # Lisp: some other cited problems
 
