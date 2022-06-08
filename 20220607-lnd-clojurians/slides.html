@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>A Tale of Lisp</title>
+
+<meta name="description" content="A Tale of Lisp">
+
+  <meta name="author" content="<strong>From Lisp to Clojure</strong>
+(and back)" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="../reveal.js/plugin/toc-progress/toc-progress.css">
+<link rel="stylesheet" href="../reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../reveal.js/css/theme/beige.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<script>
+  document.write( '<link rel="stylesheet" href="../reveal.js/css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) +
+    '.css" type="text/css" media="print">' );
+</script>
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>A Tale of Lisp</h1>
+<h3><strong>From Lisp to Clojure</strong> (and back)</h3>
+<p>
+<h4>London Clojurians Meetup - June 7th 2022</h4>
+</p>
+</section>
+
+
+<section id="part-i-early-lisp-1955-1960" class="level1">
+<h1>Part I: Early Lisp 1955-1960</h1>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/timeline-1.png" width="600"></p>
+</section>
+<section id="once-upon-a-time-in-1950" class="level1">
+<h1>Once upon a time, in 1950</h1>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/john-mccarthy.png" width="200"></p>
+<ul>
+<li>John McCarthy (1927-2011)</li>
+<li>Ph.D. mathematics from Princeton 1951</li>
+<li>Then assistant professor at Dartmouth, 1955</li>
+<li>Soon after researcher at MIT, 1956</li>
+</ul>
+</section>
+<section id="what-is-intelligence" class="level1">
+<h1>What is intelligence?</h1>
+<ul>
+<li>Hot topic in the ’50</li>
+<li>Shannon’s first <a
+href="https://vision.unipv.it/IA1/ProgrammingaComputerforPlayingChess.pdf">chess
+program</a> 1949</li>
+<li>First automated reasoning app <a
+href="https://en.wikipedia.org/wiki/Logic_Theorist">Logic Theorist</a>
+1955</li>
+<li>Alan Turing’s <a
+href="https://academic.oup.com/mind/article/LIX/236/433/986238">Computing
+Machinery and Intelligence</a> 1950</li>
+</ul>
+</section>
+<section id="artificial-intelligence-study-proposal" class="level1">
+<h1>“Artificial Intelligence” study proposal</h1>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/dartmouth-proposal.png" width="800"></p>
+</section>
+<section id="features-for-the-new-language" class="level1">
+<h1>Features for the new language</h1>
+<ul>
+<li>Abstracted away from hardware constraints</li>
+<li>Not much larger than the sentence it describes</li>
+<li>Allowing representable logical rules</li>
+<li>Enabling symbolic computations (not just numbers)</li>
+</ul>
+</section>
+<section id="reality-check-programming-in-1958" class="level1">
+<h1>Reality check: programming in 1958</h1>
+<ul>
+<li>Fortran: symbolic, arithmetic</li>
+<li>IPL: list based, low level</li>
+<li>F-LPL: Fortan-compiled for list processing</li>
+<li>Algol: McCarthy tried to influence unsuccessfully</li>
+</ul>
+<p><small>All too restrictive, in one way or another</small></p>
+</section>
+<section id="the-perfect-storm" class="level1">
+<h1>The perfect storm</h1>
+<ul>
+<li>September 1958 funding was granted</li>
+<li>Creation of a new MIT AI Lab with the following
+<ul>
+<li>2 basement rooms</li>
+<li>2 programmers, 6 students</li>
+<li>1 secretary, 1 typewriter</li>
+<li>Some limited CPU time</li>
+</ul></li>
+</ul>
+</section>
+<section id="reality-check-ibm-704" class="level1">
+<h1>Reality check: IBM 704</h1>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/ibm-704.gif" width="800"></p>
+</section>
+<section id="car-cdr-and-friends" class="level1">
+<h1><code>car</code>, <code>cdr</code> and friends</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>Name</th>
+<th>Bits</th>
+<th>Fn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>w</td>
+<td>whole-word</td>
+<td>0-35</td>
+<td>cwr</td>
+</tr>
+<tr class="even">
+<td>p</td>
+<td>prefix</td>
+<td>0-1-2</td>
+<td>cpr</td>
+</tr>
+<tr class="odd">
+<td>i</td>
+<td>indicator</td>
+<td>1-2</td>
+<td>cir</td>
+</tr>
+<tr class="even">
+<td>s</td>
+<td>sign-bit</td>
+<td>0</td>
+<td>csr</td>
+</tr>
+<tr class="odd">
+<td>d</td>
+<td>decrement</td>
+<td>3-17</td>
+<td>cdr</td>
+</tr>
+<tr class="even">
+<td>t</td>
+<td>tag</td>
+<td>18-20</td>
+<td>ctr</td>
+</tr>
+<tr class="odd">
+<td>a</td>
+<td>address</td>
+<td>21-35</td>
+<td>car</td>
+</tr>
+</tbody>
+</table>
+<p><strong>C</strong> (content of the) <name> <strong>R</strong>
+(egistry)</p>
+</section>
+<section id="progressive-refinements" class="level1">
+<h1>Progressive refinements</h1>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/diff-no-lambda.png" width="600"></p>
+<ul>
+<li>APL-ish single liner</li>
+<li>Algol like-ish</li>
+<li>“K”: a dummy var to iterate memory addresses</li>
+</ul>
+</section>
+<section id="lambda-to-the-rescue" class="level1">
+<h1>Lambda to the rescue</h1>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/diff-lambda.png" width="600"></p>
+<ul>
+<li>Inspiration coming from Church’s <a
+href="https://en.wikipedia.org/wiki/Lambda_calculus">Lambda
+Calculus</a></li>
+<li><strong>λ</strong> now allow <code>maplist</code> to declare the
+meaning of “J”</li>
+</ul>
+<p>Still not very lispy!</p>
+</section>
+<section id="turning-point-s-expressions" class="level1">
+<h1>Turning point: s-expressions</h1>
+<ul>
+<li>Challenge: demonstrate Turing completeness</li>
+<li>Proof: feed Lisp to another Lisp</li>
+<li>Alternative syntax required for easier “punching”</li>
+<li>Extend <code>apply</code> to receive Lisp forms as lists</li>
+<li><code>eval</code> would need to interpret 6-7 special forms</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/ibm-keypunch.jpg" width="400"></p>
+</section>
+<section id="and-then-steve-russell-came-around" class="level1">
+<h1>…And then Steve Russell came around</h1>
+<ul>
+<li><em>Steve:</em> “Why don’t we write this apply-eval down to
+assembly?”</li>
+<li><em>McCarthy:</em> “ho, ho, you’re confusing theory with practice…
+this <code>eval</code> is intended for reading not for computing.”</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/steve-russell.jpg"></p>
+</section>
+<section id="apply-eval" class="level1">
+<h1><code>apply</code> &lt;=&gt; <code>eval</code></h1>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/sicp.jpg" width="400"></p>
+</section>
+<section id="lisp-1-was-born" class="level1">
+<h1>Lisp 1 was born</h1>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/lisp-1-manual.png" width="400"></p>
+</section>
+<section id="lesson-learned" class="level1">
+<h1>Lesson Learned</h1>
+<ul>
+<li>Innovative, ground-breaking goals</li>
+<li>Baby steps, small increments, refined versions</li>
+<li>If the alternative doesn’t work, make your own</li>
+<li>Constrained resources, more time to think</li>
+<li>Team interplay</li>
+</ul>
+</section>
+<section id="from-lisp-to-common-lisp-1960-1990" class="level1">
+<h1>=&gt; From Lisp to Common Lisp 1960-1990</h1>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/timeline-1.png" width="600"></p>
+</section>
+<section id="after-lisp-1.0" class="level1">
+<h1>After Lisp 1.0</h1>
+<ul>
+<li>1961, <a
+href="https://texdraft.github.io/lisp-compiler/internals.html">earliest
+surviving compiler</a> by Hart-Levin</li>
+<li>1962, Lisp 1.5 came out with minor improvements</li>
+<li>1964, <a
+href="http://s3data.computerhistory.org/pdp-1/DEC.pdp_1.1964.102650371.pdf">PDP-1
+port</a> by Peter Deutch</li>
+<li>Essentially any AI lab with a Lisp wizard down the hall</li>
+<li>We’ll go fast and touch on a few implementations</li>
+</ul>
+</section>
+<section id="maclisp-1966-1990" class="level1">
+<h1>MacLisp 1966-1990</h1>
+<ul>
+<li>Targeting PDP 6-10, a production grade Lisp</li>
+<li>Lisp implementation for Project MAC (time-sharing)</li>
+<li>Consolidation of implementation techniques</li>
+<li>Style: small assembly core, Lisp library on top</li>
+</ul>
+</section>
+<section id="interlisp-1968-1990" class="level1">
+<h1>Interlisp 1968-1990</h1>
+<ul>
+<li>Born as BBN Lisp, by Bobrow and al.</li>
+<li>Style: Emphasis on user interaction</li>
+<li>IDE, debuggers, auto-completion, spell checking</li>
+<li>Infinite login sessions: moving away from files</li>
+<li>Ended up at Xerox, inspiring Smalltalk</li>
+<li>Microcoded for the Alto by Deutch</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/alto.png" width="200"></p>
+</section>
+<section id="lisp-machines" class="level1">
+<h1>Lisp Machines</h1>
+<ul>
+<li>First serious proposal by Deutch 1973</li>
+<li>Microcoded for Lisp efficiency</li>
+<li>1974, the first MIT Lisp machine</li>
+<li>Large bitmapped display inspired by the Alto</li>
+<li>Introduced many industrial grade changes to Lisp</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/symbolics.png" width="400"></p>
+</section>
+<section id="lisp-machines-innovations" class="level1">
+<h1>Lisp Machines Innovations</h1>
+<ul>
+<li>IDE-like environments, in the Interlisp spirit</li>
+<li>Specifically Symbolics Lisp:
+<ul>
+<li><code>defmacro</code> and syntax quoting</li>
+<li><code>defstruct</code> record definition facility</li>
+<li><code>format</code></li>
+<li>Flavours OO</li>
+</ul></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/symbolics-examiner.png" width="400"></p>
+</section>
+<section id="scheme" class="level1">
+<h1>Scheme</h1>
+<ul>
+<li>1975, initially to study aspects of the Actor Model</li>
+<li>Lexical closures were unusual and avoided in Lisp</li>
+<li>First-class continuations as support for actors</li>
+<li>TCO always possible thanks to continuations</li>
+<li><code>?</code> or <code>!</code> for predicates and side
+effects</li>
+<li>Style: minimalism and centralized specifications</li>
+</ul>
+</section>
+<section id="lisp-fragmentation-problem" class="level1">
+<h1>Lisp fragmentation problem</h1>
+<ul>
+<li>Many dialects with diverging philosophies</li>
+<li>Multiple Lisp machines from different vendors</li>
+<li>Multiple OO systems</li>
+<li>Multiple graphic libraries and GUIs</li>
+</ul>
+</section>
+<section id="common-lisp" class="level1">
+<h1>Common Lisp</h1>
+<ul>
+<li>An initiative started in the early ’80</li>
+<li>Goal: create a new Lisp with all the best features</li>
+<li>Initial discussions between MacLisp and Interlisp</li>
+<li>Priority given to Symbolics (largest money maker)</li>
+<li>Little or no interest in European Lisp strands</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/common-lisp.png" width="200"></p>
+</section>
+<section id="the-golden-era-1984-1988" class="level1">
+<h1>The golden era 1984-1988</h1>
+<ul>
+<li>AI was on the rise, Lisp was the language of AI</li>
+<li>Expert systems was the “killer app”</li>
+<li>The allure of AI attracted business and VCs</li>
+<li>Lisp was granted unprecedented popularity</li>
+<li>Lisp companies thrived thanks to quality and performance</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/texas-instruments.png" width="250"></p>
+</section>
+<section id="lesson-learned-1" class="level1">
+<h1>Lesson Learned</h1>
+<ul>
+<li>Importance of theoretical foundations, Lisp is rooted in math</li>
+<li>Expressiveness power, the freedom from lower level details</li>
+<li>Easy DSLs, similar to the core language</li>
+<li>Interactive and incremental nature</li>
+<li>Pivotal to fundamental innovation</li>
+</ul>
+</section>
+<section id="from-cl-to-clojure-1990---2007" class="level1">
+<h1>=&gt; From CL to Clojure 1990 - 2007</h1>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/timeline-2.png" width="600"></p>
+</section>
+<section id="times-are-changing" class="level1">
+<h1>Times are changing</h1>
+<ul>
+<li>Advent of the web: shift from personal to distributed</li>
+<li>OO-based RAD IDE toolkits (like <a
+href="https://en.wikipedia.org/wiki/Delphi_(software)">Delphi</a>)</li>
+<li>Unix (with C) installed on 90% of servers</li>
+<li>Scripting languages: Python (1991), Java (applets) (1995),
+JavaScript (1996)</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/delphi-win95.png" width="400"></p>
+</section>
+<section id="the-last-ai-winter-1990" class="level1">
+<h1>The (last) AI Winter, 1990+</h1>
+<ul>
+<li>Was Lisp killed by its killer app?</li>
+<li>In typical bubble style, AI was over hyped</li>
+<li>Lisp machines power gradually eroded by Moore’s law</li>
+<li>Negative impact of large failures like the <a
+href="https://en.wikipedia.org/wiki/Fifth_Generation_Computer_Systems#Failure">Fifth
+Generation System</a></li>
+<li>Counterproductive self-blaming of Expert Systems as non-AI</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/reborg/lisp-history-talk/master/20220607-lnd-clojurians/media/fifth-gen.jpg" width="400"></p>
+</section>
+<section id="lisp-some-other-cited-problems" class="level1">
+<h1>Lisp: some other cited problems</h1>
+<ul>
+<li>Imperative, OO or functional? All of them!</li>
+<li>Perhaps even too expressive: the <a
+href="http://www.winestockwebdesign.com/Essays/Lisp_Curse.html">Lisp
+curse</a></li>
+<li>King of the “throw-away design”: the <a
+href="https://www.marktarver.com/bipolar.html">Bipolar Lisp
+Programmer</a></li>
+<li>Pointy-haired bosses adverseness to risk (including dynamic
+types)</li>
+<li>“Many Lisps” even after going common</li>
+</ul>
+</section>
+<section id="is-lisp-dead-not-really" class="level1">
+<h1>2022: is Lisp dead? Not really</h1>
+<ul>
+<li><a href="http://www.sbcl.org/">SBCL</a> (CL)</li>
+<li><a href="https://armedbear.common-lisp.dev/">ABCL</a> (CL)</li>
+<li><a
+href="https://franz.com/products/allegro-common-lisp/">Allegro</a>
+(CL)</li>
+<li><a href="http://www.lispworks.com/">LispWorks</a> (CL)</li>
+<li><a href="https://github.com/Clozure/ccl">Clozure CL</a> (CL)</li>
+<li><a href="https://racket-lang.org/">Racket</a> (not CL)</li>
+<li><a
+href="https://www.gnu.org/software/emacs/manual/html_node/elisp/">Emacs
+Lisp</a> (Not CL)</li>
+<li><a href="https://shenlanguage.org/">Shen</a> (Not CL)</li>
+<li>…</li>
+</ul>
+</section>
+<section id="clojure-the-build-up-2001-2006" class="level1">
+<h1>Clojure, the build up 2001-2006</h1>
+<ul>
+<li>2001, Rich worked on a couple of production CL applications</li>
+<li>2003, <a
+href="http://dotlisp.sourceforge.net/dotlisp.htm">DotLisp</a>
+(interpreted Lisp for the CLR)</li>
+<li>2004, <a href="http://jfli.sourceforge.net/">jFli</a> (embedded JVM
+in CL)</li>
+<li>2005, <a href="http://foil.sourceforge.net/">Foil</a> (JVM to CL via
+IPC)</li>
+<li>2006, Clojure <a
+href="https://sourceforge.net/p/clojure/code/1/">first commit</a></li>
+</ul>
+</section>
+<section id="steady-growth-2007-2022" class="level1">
+<h1>Steady growth, 2007-2022</h1>
+<ul>
+<li>2007, <a
+href="https://sourceforge.net/projects/clojure/files/clojure/20070922/">first
+public release</a></li>
+<li>2008, Rich invited at <a
+href="http://lisp50.blogspot.com/2008/10/lisp50-schedule-is-now-available.html">Lisp50</a>
+(OOPSLA 2008)</li>
+<li>2009, JVM Language Summit <a
+href="https://www.infoq.com/presentations/Are-We-There-Yet-Rich-Hickey/">Are
+we there yet?</a> influential talk</li>
+<li>2009, <a
+href="https://www.amazon.co.uk/Programming-Clojure-Pragmatic-Programmers-Halloway/dp/1934356336">Programming
+Clojure</a> first ed.</li>
+<li>2010, First <a
+href="https://web.archive.org/web/20100822131230/http://first.clojure-conj.org/">Clojure
+Conj</a></li>
+<li>2012, Datomic <a
+href="http://blog.fogus.me/2012/03/05/datomic/">announced</a>, first <a
+href="https://web.archive.org/web/20120210173552/http://euroclojure.com/2012/">EuroClojure</a></li>
+<li>2013, Relevance becomes <a
+href="https://www.cognitect.com/blog/2013/09/16/relevance-and-metadata-partners-join-forces-to-become-cognitect">Cognitect</a></li>
+<li>2014, and following new tools, releases, libraries, features
+etc.</li>
+<li>2020, Clojure at <a
+href="https://hopl4.sigplan.org/details/hopl-4-papers/9/A-History-of-Clojure">HOPL
+IV</a>, Nubank <a
+href="https://building.nubank.com.br/nubank-acquires-cognitect-press-release/">buys
+Cognitect</a></li>
+<li>2022, 20+ books, conferences, 23k+ Slack users, many job posts</li>
+</ul>
+</section>
+<section id="is-functional-finally-taking-over" class="level1">
+<h1>Is functional finally taking over?</h1>
+<ul>
+<li>We should perhaps ask if things have fundamentally changed</li>
+<li>Is <a
+href="https://stackoverflow.com/questions/2835801/why-hasnt-functional-programming-taken-over-yet">multi-core
+parallelism</a> essential?</li>
+<li>Was programming liberated from the <a
+href="https://dl.acm.org/doi/pdf/10.1145/359576.359579">Von Neumann
+style</a>?</li>
+<li>Has overall complexity of software changed?</li>
+<li>“Just” FP might not be enough to get <a
+href="http://curtclifton.net/papers/MoseleyMarks06a.pdf">out the tar
+pit</a></li>
+</ul>
+<blockquote>
+<p>The complexity of software is an essential property, not an
+accidental one. Fred Brooks, <a
+href="https://web.archive.org/web/20160910002130/http://worrydream.com/refs/Brooks-NoSilverBullet.pdf">No
+Silver Bullet</a></p>
+</blockquote>
+</section>
+<section id="what-makes-a-language-popular" class="level1">
+<h1>What makes a language popular?</h1>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Free, efficient, expressive, well designed</li>
+<li><input type="checkbox" disabled="" />
+Documented and beginner friendly</li>
+<li><input type="checkbox" disabled="" />
+Presence of a charismatic leader</li>
+<li><input type="checkbox" disabled="" />
+Scripting language for a popular OS or browser</li>
+<li><input type="checkbox" disabled="" />
+Distributed by a large vendor (marketing and money)</li>
+<li><input type="checkbox" disabled="" />
+Has a “killer app”</li>
+<li><input type="checkbox" disabled="" />
+Batteries included (Json, Web, etc.)</li>
+<li><input type="checkbox" disabled="" />
+Backward compatible and stable</li>
+<li><input type="checkbox" disabled="" />
+Easily contributed, hackable</li>
+<li><input type="checkbox" disabled="" />
+Pivotal to fundamental innovation</li>
+</ul>
+</section>
+<section id="is-clojure-popular" class="level1">
+<h1>Is Clojure popular?</h1>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" checked="" />
+Free, efficient, expressive, well designed</li>
+<li><input type="checkbox" disabled="" />
+Documented and beginner friendly (maybe)</li>
+<li><input type="checkbox" disabled="" checked="" />
+Charismatic leader</li>
+<li><input type="checkbox" disabled="" />
+Scripting language for a popular OS or browser</li>
+<li><input type="checkbox" disabled="" />
+Distributed by a large vendor (marketing and money)</li>
+<li><input type="checkbox" disabled="" />
+Has a “killer app”</li>
+<li><input type="checkbox" disabled="" />
+Batteries included (Json, Web, etc.)</li>
+<li><input type="checkbox" disabled="" checked="" />
+Backward compatible and stable</li>
+<li><input type="checkbox" disabled="" />
+Easily contributed, hackable</li>
+<li><input type="checkbox" disabled="" />
+Pivotal to fundamental innovation</li>
+</ul>
+</section>
+<section id="does-it-need-to-be-popular" class="level1">
+<h1>Does it need to be popular?</h1>
+<blockquote>
+<p>I needed another choice more like Common Lisp or I wouldn’t be able
+to continue as a professional software developer.</p>
+</blockquote>
+<p><small>Rich Hickey, <a
+href="https://download.clojure.org/papers/clojure-hopl-iv-final.pdf">A
+history of Clojure</a>, 2020</small></p>
+<blockquote>
+<p>Popularity further separates good languages from bad ones, because
+feedback from real live users always leads to improvements. So whether
+or not a language has to be good to be popular, I think a language has
+to be popular to be good. And it has to stay popular to stay good.</p>
+</blockquote>
+<p><small>Paul Graham, <a
+href="https://www.amazon.co.uk/Hackers-Painters-Big-Ideas-Computer/dp/1449389554">Hackers
+and Painters</a>, 2010</small></p>
+</section>
+<section id="can-it-be-popular" class="level1">
+<h1>Can it be popular?</h1>
+<ul>
+<li>Popularity doesn’t need to happen fast and can trigger anytime</li>
+<li>Lisp <a href="http://www.paulgraham.com/icad.html">it’s rooted in
+math</a>: are we teaching it wrong?</li>
+</ul>
+<blockquote>
+<p>Many young people perception of mathematics is as being “boring and
+irrelevant”</p>
+</blockquote>
+<p><small><a
+href="https://dera.ioe.ac.uk/4873/1/MathsInquiryFinalReport.pdf">maths
+inquiry report</a>, 2004</small></p>
+<blockquote>
+<p>“The popularity of mathematics diminishes during the time students
+are exposed to mathematics at school”</p>
+</blockquote>
+<p><small><a
+href="https://www.worldcat.org/title/popularization-of-mathematics/oclc/23020125">The
+popularization of mathematics</a> 1990</small></p>
+</section>
+<section id="is-there-hope" class="level1">
+<h1>Is there hope?</h1>
+<ul>
+<li>Of course!</li>
+<li>Human beings are short lived</li>
+<li>Knowledge persists through books, media, etc.</li>
+<li>Humans forget, distort, make mistakes</li>
+<li>As a consequence, history repeats</li>
+<li>Learn the past to shape a better future</li>
+</ul>
+</section>
+<section id="what-can-i-do" class="level1">
+<h1>What can I do?</h1>
+<ul>
+<li>Tell the Lisp tale to friends and family</li>
+<li>Talk at conferences and meetups</li>
+<li>Write blogs, libraries, books</li>
+<li>Finally crack the “intelligence” problem</li>
+<li>Never stop learning!</li>
+</ul>
+</section>
+<section id="section" class="level1">
+<h1></h1>
+<p>~ fin ~</p>
+</section>
+</div>
+
+<script src="../reveal.js/lib/js/head.min.js"></script>
+<script src="../reveal.js/js/reveal.js"></script>
+
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+  // available themes are in /css/theme
+      theme: Reveal.getQueryHash().theme || 'beige',
+  
+  // default/cube/page/concave/zoom/linear/fade/none
+      transition: Reveal.getQueryHash().transition || 'linear',
+  
+    dependencies: [
+      { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: '../reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: '../reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: '../reveal.js/plugin/toc-progress/toc-progress.js', async: true, callback: function() { toc_progress.initialize(); toc_progress.create(); } }
+      // { src: '../reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+    ]
+  });
+
+</script>
+
+</body>
+</html>
