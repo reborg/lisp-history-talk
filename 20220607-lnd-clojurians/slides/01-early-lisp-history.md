@@ -80,7 +80,6 @@
 
 * Inspiration coming from Church's [Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus)
 * **λ** now allow `maplist` to declare the meaning of "J"
-* No mutation, `maplist` gets fresh elements from storage
 
 Still not very lispy!
 
